@@ -1,5 +1,8 @@
 <div class="header">
-    <h2 class="header__title">{{title}}</h2>
+    <h2 class="header__title" *ngIf="scheduleType === 0">{{title}}</h2>
+    <h2 class="header__title" *ngIf="scheduleType === 1">1 MONTH SCHEDULE</h2>
+    <h2 class="header__title" *ngIf="scheduleType === 2">3 MONTH SCHEDULE</h2>
+    <h2 class="header__title" *ngIf="scheduleType === 3">6 MONTH SCHEDULE</h2>
 </div>
 <div class="content">
     <div *ngIf="scheduleType === 0">
@@ -19,6 +22,12 @@
             <h3 class="schedule__title">6 Month</h3>
             <h4 class="schedule__subtitle">Steady Eddie</h4>
         </a>
+    </div>
+    <div *ngIf="scheduleType !== 0">
+        <h2 *ngIf="scheduleType !== 1" class="content__title">The HARDCORE Plan</h2>
+        <h2 *ngIf="scheduleType !== 2" class="content__title">The FAST TRACK Plan</h2>
+        <h2 *ngIf="scheduleType !== 3" class="content__title">The STEDY EDDIE Plan</h2>
+        <app-schedule *ngIf="scheduleType !== 0" [scheduleType]="scheduleType"></app-schedule>
     </div>
 </div>
 <div class="footer">

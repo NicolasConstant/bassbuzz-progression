@@ -19,7 +19,7 @@ export class AppComponent {
     }
 }
 
-enum BassBuzzScheduleEnum {
+export enum BassBuzzScheduleEnum {
     Unknown = 0,
     OneMonth = 1,
     ThreeMonth = 2,
