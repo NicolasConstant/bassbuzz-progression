@@ -20,6 +20,13 @@
         </div>
     </div>
     <div *ngIf="scheduleType === 3">
-
+        <div *ngFor="let d of weeks">
+            <div>
+                <div>WEEK {{ d.name }}</div>
+                <div *ngFor="let l of d.lessons">
+                    {{ l.id }}
+                </div>
+            </div>
+        </div>
     </div>
 </div>

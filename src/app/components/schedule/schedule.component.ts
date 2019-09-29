@@ -20,6 +20,7 @@ export class ScheduleComponent implements OnInit {
     ngOnInit() {
         const lessons = this.scheduleService.getLessons();
 
+        console.warn(this.scheduleType);
         switch (this.scheduleType) {
             case BassBuzzScheduleEnum.OneMonth:
                 this.setOneMonth(lessons);
@@ -35,7 +36,18 @@ export class ScheduleComponent implements OnInit {
     }
 
     setSixMonth(lessons: Lesson[]): void {
-        throw new Error("Method not implemented.");
+        console.warn('6M');
+        let splited = this.arrayTo2DArray1(lessons, 7);
+
+        let i = 0;
+        splited.forEach(x => {
+            i++;
+            this.weeks.push(new Week(i, x.slice(0, 3)));
+            i++;
+            this.weeks.push(new Week(i, x.slice(3, 7)));
+            console.warn(this.weeks);
+        });
+
     }
 
     setThreeMonth(lessons: Lesson[]): void {
