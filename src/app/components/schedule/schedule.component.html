@@ -4,7 +4,7 @@
             <div class="schedule__element schedule__day">
                 <div>DAY {{ d.name }}</div>
                 <div *ngFor="let l of d.lessons">
-                    <app-lesson [id]="l.id"></app-lesson>
+                    <app-lesson class="lesson" [id]="l.id"></app-lesson>
                 </div>
             </div>
         </div>
@@ -14,7 +14,7 @@
             <div class="schedule__element schedule__month">
                 <div>WEEK {{ d.name }}</div>
                 <div *ngFor="let l of d.lessons">
-                    <app-lesson [id]="l.id"></app-lesson>
+                    <app-lesson class="lesson"  [id]="l.id"></app-lesson>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="schedule__element schedule__month-6">
                 <div>WEEK {{ d.name }}</div>
                 <div *ngFor="let l of d.lessons">
-                    <app-lesson [id]="l.id"></app-lesson>
+                    <app-lesson class="lesson"  [id]="l.id"></app-lesson>
                 </div>
             </div>
         </div>

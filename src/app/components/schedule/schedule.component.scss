@@ -10,9 +10,7 @@ $light-gray: #f2f5f5;
     }
 
     &__day {
-    }
-
-    &__month {
+        overflow: auto;
         width: calc(50% - 5px);
         float: left;
 
@@ -21,7 +19,17 @@ $light-gray: #f2f5f5;
         }
     }
 
+    &__month {
+        overflow: auto;
+    }
+
     &__month-6 {
+        overflow: auto;
         width: calc(50%);
     }
+}
+
+.lesson {
+    display: block;
+    float: left;
 }
