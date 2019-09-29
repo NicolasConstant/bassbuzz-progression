@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { LessonComponent } from './components/lesson/lesson.component';
+import { ReseterComponent } from './components/reseter/reseter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScheduleComponent,
-    LessonComponent    
+    LessonComponent,
+    ReseterComponent    
   ],
   imports: [
     BrowserModule,

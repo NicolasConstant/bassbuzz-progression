@@ -1,0 +1,20 @@
+$light-gray: #f2f5f5;
+$height: 50px;
+
+.reseter {
+    &__schedule {
+        display: block;
+        height: $height;
+        width: calc(50% - 5px);
+        margin-right: 5px;
+        background-color: #f2f5f5;
+        float: left;
+    }
+
+    &__lessons {
+        width: calc(50%);
+        height: $height;
+        background-color: #f2f5f5;
+        float: left;
+    }
+}

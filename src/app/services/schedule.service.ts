@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
-export class ScheduleService {
+export class ScheduleService {    
     private lessonsStorageName: string = 'lessons';
     private scheduleStorageName: string = 'schedule';
 
-    constructor() { }
+    scheduleTypeSub = new BehaviorSubject<BassBuzzScheduleEnum>(BassBuzzScheduleEnum.Unknown);
 
-    getScheduleType(): BassBuzzScheduleEnum {
+    constructor() { 
+        const scheduleType = this.getScheduleType();
+        this.scheduleTypeSub.next(scheduleType);
+    }
+
+    private getScheduleType(): BassBuzzScheduleEnum {
         const value = +localStorage.getItem(this.scheduleStorageName);
         if(value){
             return <BassBuzzScheduleEnum>value;
@@ -18,8 +24,13 @@ export class ScheduleService {
         }
     }
 
-    saveScheduleType(type: BassBuzzScheduleEnum) {
+    private saveScheduleType(type: BassBuzzScheduleEnum) {
         localStorage.setItem(this.scheduleStorageName, type.toString());
+    }
+
+    changeScheduleType(type: BassBuzzScheduleEnum): any {
+        this.saveScheduleType(type);
+        this.scheduleTypeSub.next(type);
     }
 
     getLessons(): Lesson[] {
