@@ -24,11 +24,13 @@
         </div>
     </div>
     <div *ngIf="scheduleType === 3">
-        <div *ngFor="let d of weeks">
-            <div class="schedule__element schedule__month-6">
-                <div>WEEK {{ d.name }}</div>
-                <div *ngFor="let l of d.lessons">
-                    <app-lesson class="lesson" [id]="l.id"></app-lesson>
+        <div *ngFor="let d of weeks" class="schedule__element schedule__six-month">
+            <div>
+                <div class="schedule__six-month--title">WEEK {{ d.name }}</div>
+                <div class="schedule__six-month--lessons">
+                    <div *ngFor="let l of d.lessons">
+                        <app-lesson class="six-month--lesson lesson" [id]="l.id"></app-lesson>
+                    </div>
                 </div>
             </div>
         </div>

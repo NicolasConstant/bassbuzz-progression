@@ -54,9 +54,39 @@ $light-gray: #f2f5f5;
         }
     }
 
-    &__month-6 {
+    &__six-month {
         overflow: auto;
-        width: calc(50%);
+        float: left;
+        
+        &:nth-child(odd) {
+            width: calc(42%);
+            margin-right: 5px;
+
+            .six-month--lesson {
+                width: calc(100% / 3);
+            }
+        }
+
+        &:nth-child(even) {
+            width: calc(57% - 5px);
+
+            .six-month--lesson {
+                width: calc(100% / 4);
+            }
+        }
+
+        &--title {
+            width: 80px;
+            font-weight: bold;
+            float: left;
+        }
+
+        &--lessons {
+            margin-left: 80px;
+            width: calc(100% - 80px);
+
+            
+        }
     }
 }
 
