@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { BassBuzzScheduleEnum } from '../../app.component';
-import { ScheduleService, Lesson } from '../../services/schedule.service';
+import { ScheduleService, Lesson, BassBuzzScheduleEnum } from '../../services/schedule.service';
 
 @Component({
     selector: 'app-schedule',

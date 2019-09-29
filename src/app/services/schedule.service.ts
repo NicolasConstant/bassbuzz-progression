@@ -1,13 +1,26 @@
 import { Injectable } from '@angular/core';
-import { setFirstTemplatePass } from '@angular/core/src/render3/state';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ScheduleService {
     private lessonsStorageName: string = 'lessons';
+    private scheduleStorageName: string = 'schedule';
 
     constructor() { }
+
+    getScheduleType(): BassBuzzScheduleEnum {
+        const value = +localStorage.getItem(this.scheduleStorageName);
+        if(value){
+            return <BassBuzzScheduleEnum>value;
+        } else {
+            return BassBuzzScheduleEnum.Unknown;
+        }
+    }
+
+    saveScheduleType(type: BassBuzzScheduleEnum) {
+        localStorage.setItem(this.scheduleStorageName, type.toString());
+    }
 
     getLessons(): Lesson[] {
         const savedLessons = this.getSavedLessons();
@@ -38,7 +51,7 @@ export class ScheduleService {
     private saveLessons(lessons: Lesson[]) {
         const json = JSON.stringify(lessons);
         localStorage.setItem(this.lessonsStorageName, json);
-    }
+    }   
 
     private generateNewSetLessons(): Lesson[] {
         let lessons: Lesson[] = [];
@@ -120,4 +133,11 @@ export class Lesson {
 
     id: string;
     done: boolean = false;
+}
+
+export enum BassBuzzScheduleEnum {
+    Unknown = 0,
+    OneMonth = 1,
+    ThreeMonth = 2,
+    SixMonth = 3
 }

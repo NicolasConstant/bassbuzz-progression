@@ -1,27 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { BassBuzzScheduleEnum, ScheduleService } from './services/schedule.service';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-    title = 'BassBuzz.com Progression';
-    scheduleType: BassBuzzScheduleEnum = BassBuzzScheduleEnum.Unknown;
+export class AppComponent implements OnInit {    
+    scheduleType: BassBuzzScheduleEnum;
 
-    constructor() {
-                
+    constructor(private readonly scheduleService: ScheduleService) {                
+    }
+
+    ngOnInit(): void {
+        this.scheduleType = this.scheduleService.getScheduleType();
     }
 
     selectSchedule(value: BassBuzzScheduleEnum): boolean {
-        this.scheduleType = value;
+        this.scheduleService.saveScheduleType(value);
+        this.scheduleType = value;        
         return false;
     }
 }
 
-export enum BassBuzzScheduleEnum {
-    Unknown = 0,
-    OneMonth = 1,
-    ThreeMonth = 2,
-    SixMonth = 3
-}
