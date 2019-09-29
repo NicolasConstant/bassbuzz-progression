@@ -1,0 +1,27 @@
+$light-gray: #f2f5f5;
+
+.schedule {
+    overflow: auto;
+
+    &__element {
+        background-color: $light-gray;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+
+    &__day {
+    }
+
+    &__month {
+        width: calc(50% - 5px);
+        float: left;
+
+        &:nth-child(odd){
+            margin-right: 5px;
+        }
+    }
+
+    &__month-6 {
+        width: calc(50%);
+    }
+}

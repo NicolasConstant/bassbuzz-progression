@@ -1,30 +1,30 @@
 <div class="schedule">
     <div *ngIf="scheduleType === 1">
         <div *ngFor="let d of days">
-            <div>
+            <div class="schedule__element schedule__day">
                 <div>DAY {{ d.name }}</div>
                 <div *ngFor="let l of d.lessons">
-                    {{ l.id }}
+                    <app-lesson [id]="l.id"></app-lesson>
                 </div>
             </div>
         </div>
     </div>
     <div *ngIf="scheduleType === 2">
         <div *ngFor="let d of weeks">
-            <div>
+            <div class="schedule__element schedule__month">
                 <div>WEEK {{ d.name }}</div>
                 <div *ngFor="let l of d.lessons">
-                    {{ l.id }}
+                    <app-lesson [id]="l.id"></app-lesson>
                 </div>
             </div>
         </div>
     </div>
     <div *ngIf="scheduleType === 3">
         <div *ngFor="let d of weeks">
-            <div>
+            <div class="schedule__element schedule__month-6">
                 <div>WEEK {{ d.name }}</div>
                 <div *ngFor="let l of d.lessons">
-                    {{ l.id }}
+                    <app-lesson [id]="l.id"></app-lesson>
                 </div>
             </div>
         </div>
