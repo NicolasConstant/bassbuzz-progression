@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { LessonComponent } from './components/lesson/lesson.component';
 import { ReseterComponent } from './components/reseter/reseter.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ReseterComponent } from './components/reseter/reseter.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

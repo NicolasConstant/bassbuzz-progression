@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { BassBuzzScheduleEnum, ScheduleService } from './services/schedule.service';
+import { PwaService } from './services/pwa.service';
 
 
 @Component({
@@ -13,7 +14,9 @@ export class AppComponent implements OnInit, OnDestroy {
     scheduleType: BassBuzzScheduleEnum;
     private scheduleSub: Subscription;
 
-    constructor(private readonly scheduleService: ScheduleService) {
+    constructor(
+        private readonly scheduleService: ScheduleService, 
+        private readonly pwaService: PwaService) {
     }
 
     ngOnInit(): void {
