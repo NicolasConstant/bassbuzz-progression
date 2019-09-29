@@ -3,7 +3,7 @@ Unofficial progression webapp (PWA)
 
 ## Introduction
 
-This webapp aims to provide a interactive way to complete the [BassBuzz Schelules](https://www.bassbuzz.com/lessons/beginner-to-badass/extras/download)
+This webapp aims to provide a interactive way to complete the [BassBuzz Schedules](https://www.bassbuzz.com/lessons/beginner-to-badass/extras/download)
 
 ## Website
 
