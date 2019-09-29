@@ -5,32 +5,35 @@
     <h2 class="header__title" *ngIf="scheduleType === 3">6 MONTH SCHEDULE</h2>
 </div>
 <div class="content">
-    <div *ngIf="scheduleType === 0">
-        <h2 class="content__title">Select your schedule</h2>
+    <div class="content__inner">
+        <div *ngIf="scheduleType === 0">
+            <h2 class="content__title">Select your schedule</h2>
 
-        <a href (click)="selectSchedule(1)" class="schedule" title="select 1 month">
-            <h3 class="schedule__title">1 Month</h3>
-            <h4 class="schedule__subtitle">Hardcore Schedule</h4>
-        </a>
+            <a href (click)="selectSchedule(1)" class="schedule" title="select 1 month">
+                <h3 class="schedule__title">1 Month</h3>
+                <h4 class="schedule__subtitle">Hardcore Schedule</h4>
+            </a>
 
-        <a href (click)="selectSchedule(2)" class="schedule" title="select 3 month">
-            <h3 class="schedule__title">3 Month</h3>
-            <h4 class="schedule__subtitle">Fast-Track Schedule</h4>
-        </a>
+            <a href (click)="selectSchedule(2)" class="schedule" title="select 3 month">
+                <h3 class="schedule__title">3 Month</h3>
+                <h4 class="schedule__subtitle">Fast-Track Schedule</h4>
+            </a>
 
-        <a href (click)="selectSchedule(3)" class="schedule" title="select 6 month">
-            <h3 class="schedule__title">6 Month</h3>
-            <h4 class="schedule__subtitle">Steady Eddie</h4>
-        </a>
-    </div>
-    <div *ngIf="scheduleType !== 0">
-        <h2 *ngIf="scheduleType === 1" class="content__title">The HARDCORE Plan</h2>
-        <h2 *ngIf="scheduleType === 2" class="content__title">The FAST TRACK Plan</h2>
-        <h2 *ngIf="scheduleType === 3" class="content__title">The STEDY EDDIE Plan</h2>
+            <a href (click)="selectSchedule(3)" class="schedule" title="select 6 month">
+                <h3 class="schedule__title">6 Month</h3>
+                <h4 class="schedule__subtitle">Steady Eddie</h4>
+            </a>
+        </div>
+        <div *ngIf="scheduleType !== 0">
+            <h2 *ngIf="scheduleType === 1" class="content__title">The HARDCORE Plan</h2>
+            <h2 *ngIf="scheduleType === 2" class="content__title">The FAST TRACK Plan</h2>
+            <h2 *ngIf="scheduleType === 3" class="content__title">The STEDY EDDIE Plan</h2>
 
-        <p class="content__description">M = Module. L = Lesson. For example M3-L2 = Module 3, Lesson 2. Check-off the box when you've completed the lesson and corresponding workouts.</p>
+            <p class="content__description">M = Module. L = Lesson. For example M3-L2 = Module 3, Lesson 2. Check-off
+                the box when you've completed the lesson and corresponding workouts.</p>
 
-        <app-schedule *ngIf="scheduleType !== 0" [scheduleType]="scheduleType"></app-schedule>
+            <app-schedule *ngIf="scheduleType !== 0" [scheduleType]="scheduleType"></app-schedule>
+        </div>
     </div>
 </div>
 <div class="footer">
