@@ -1,17 +1,43 @@
 import { Injectable } from '@angular/core';
+import { setFirstTemplatePass } from '@angular/core/src/render3/state';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ScheduleService {
+    private lessonsStorageName: string = 'lessons';
+
     constructor() { }
 
     getLessons(): Lesson[] {
-        return this.generateNewSetLessons();
+        const savedLessons = this.getSavedLessons();
+        if(savedLessons.length === 0) {
+            const generatedLessons = this.generateNewSetLessons();
+            this.saveLessons(generatedLessons);
+        }
+
+        return this.getSavedLessons();
     }
 
-    validateLesson(id: string) {
+    changeLessonStatus(id: string, isDone: boolean) {
+        const lessons = this.getSavedLessons();
+        const lesson = lessons.find(x => x.id === id);
+        lesson.done = isDone;
+        this.saveLessons(lessons);
+    }
 
+    private getSavedLessons(): Lesson[] {
+        const json = localStorage.getItem(this.lessonsStorageName);
+        if (json) {
+            return JSON.parse(json);
+        } else {
+            return [];
+        }
+    }
+
+    private saveLessons(lessons: Lesson[]) {
+        const json = JSON.stringify(lessons);
+        localStorage.setItem(this.lessonsStorageName, json);
     }
 
     private generateNewSetLessons(): Lesson[] {
@@ -82,7 +108,7 @@ export class ScheduleService {
         }
 
         return lessons;
-    }   
+    }
 }
 
 export class Lesson {

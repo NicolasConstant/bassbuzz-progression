@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Lesson } from '../../services/schedule.service';
+import { Lesson, ScheduleService } from '../../services/schedule.service';
 
 @Component({
     selector: 'app-lesson',
@@ -11,14 +11,14 @@ export class LessonComponent implements OnInit {
 
     isChecked: boolean;
 
-    constructor() { }
+    constructor(private readonly scheduleService: ScheduleService) { }
 
     ngOnInit() {
         this.isChecked = this.lesson.done;
     }
 
     lessonChanged(): boolean {
-        console.warn(this.isChecked);
+        this.scheduleService.changeLessonStatus(this.lesson.id, this.isChecked);
         return false;
     }
 
