@@ -12,6 +12,11 @@ export class AppComponent {
     constructor() {
                 
     }
+
+    selectSchedule(value: BassBuzzScheduleEnum): boolean {
+        this.scheduleType = value;
+        return false;
+    }
 }
 
 enum BassBuzzScheduleEnum {
