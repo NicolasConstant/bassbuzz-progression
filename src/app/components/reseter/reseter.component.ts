@@ -8,6 +8,7 @@ import { ScheduleService, BassBuzzScheduleEnum } from '../../services/schedule.s
     styleUrls: ['./reseter.component.scss']
 })
 export class ReseterComponent implements OnInit {
+    processingDeleteAllData: boolean = false;
 
     constructor(private readonly scheduleService: ScheduleService) { }
 
@@ -19,4 +20,18 @@ export class ReseterComponent implements OnInit {
         return false;
     }
 
+    deleteAllData(): boolean {
+        this.processingDeleteAllData = true;
+        return false;
+    }
+
+    validateDeleteAllData(): boolean {
+        this.scheduleService.resetAllData();
+        return false;
+    }
+
+    cancelDeleteAllData(): boolean {
+        this.processingDeleteAllData = false;
+        return false;
+    }
 }

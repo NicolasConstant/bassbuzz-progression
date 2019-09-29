@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
     providedIn: 'root'
 })
-export class ScheduleService {    
+export class ScheduleService {       
     private lessonsStorageName: string = 'lessons';
     private scheduleStorageName: string = 'schedule';
 
@@ -14,6 +14,11 @@ export class ScheduleService {
         const scheduleType = this.getScheduleType();
         this.scheduleTypeSub.next(scheduleType);
     }
+
+    resetAllData() {
+        localStorage.clear();
+        this.changeScheduleType(BassBuzzScheduleEnum.Unknown);        
+    } 
 
     private getScheduleType(): BassBuzzScheduleEnum {
         const value = +localStorage.getItem(this.scheduleStorageName);
