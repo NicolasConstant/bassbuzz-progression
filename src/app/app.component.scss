@@ -1,0 +1,41 @@
+.header {
+    min-height: 30px;
+    padding: 60px 0 40px;
+
+    &__title {
+        font-size: 2em;
+        text-align: center;
+    }
+}
+
+.content {
+    min-height: 50vh;
+    background-color: white;
+}
+
+.footer {
+    text-align: center;
+
+    &__link {
+        transition: all .2s;
+        color: black; 
+        &:hover {
+            color: gray;
+        }
+    }
+
+    &__official-link {
+        display: inline-block;
+            
+        margin: 10px 0;
+                
+    }
+
+    &__disclamer {
+        font-size: .7em;
+        font-weight: bold;
+    }
+}
+
+
+
