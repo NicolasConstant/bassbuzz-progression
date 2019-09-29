@@ -37,6 +37,21 @@ $light-gray: #f2f5f5;
 
     &__month {
         overflow: auto;
+
+        &--title {
+            width: 70px;
+            font-weight: bold;
+            float: left;
+        }
+
+        &--lessons {
+            margin-left: 70px;
+            width: calc(100% - 70px);
+
+            &--lesson {
+                width: calc(100% / 7);
+            }
+        }
     }
 
     &__month-6 {
