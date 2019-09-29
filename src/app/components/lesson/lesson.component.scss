@@ -1,3 +1,5 @@
+$orange: #ff8d58;
+
 .container {
     font-size: .8em;
     font-weight: bold;
@@ -43,7 +45,7 @@
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: $orange;
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -60,11 +62,11 @@
   
   /* Style the checkmark/indicator */
   .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
+    left: 10px;
+    top: 4px;
+    width: 8px;
+    height: 15px;
+    border: solid black;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
