@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Lesson } from '../../services/schedule.service';
 
 @Component({
     selector: 'app-lesson',
@@ -6,12 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
     styleUrls: ['./lesson.component.scss']
 })
 export class LessonComponent implements OnInit {
-    @Input() id: string;
-    checked: boolean;
+    @Input() lesson: Lesson;
+
+    isChecked: boolean;
 
     constructor() { }
 
     ngOnInit() {
+        this.isChecked = this.lesson.done;
+    }
+
+    lessonChanged(): boolean {
+        console.warn(this.isChecked);
+        return false;
     }
 
 }

@@ -93,5 +93,5 @@ export class Lesson {
     }
 
     id: string;
-    done: boolean;
+    done: boolean = false;
 }

@@ -1,4 +1,4 @@
-<label class="container">{{id}}
-    <input type="checkbox" checked="{{checked}}">
+<label class="container">{{lesson.id}}
+    <input type="checkbox" [(ngModel)]="isChecked" (change)="lessonChanged()">
     <span class="checkmark"></span>
 </label>
