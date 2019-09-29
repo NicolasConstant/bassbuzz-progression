@@ -17,6 +17,22 @@ $light-gray: #f2f5f5;
         &:nth-child(odd){
             margin-right: 5px;
         }
+
+        &--title {
+            width: 70px;
+            font-weight: bold;
+            float: left;
+        }
+
+        &--lessons {
+            margin-left: 70px;
+            width: calc(100% - 70px);
+
+            &--lesson {
+                width: calc(100% / 3);
+                // outline: 1px solid greenyellow;
+            }
+        }
     }
 
     &__month {
@@ -31,5 +47,5 @@ $light-gray: #f2f5f5;
 
 .lesson {
     display: block;
-    float: left;
+    float: left;    
 }

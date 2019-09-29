@@ -1,7 +1,11 @@
 .container {
+    font-size: .8em;
+    font-weight: bold;
+    height: 40px;
+
     display: inline-block;
     position: relative;
-    padding-left: 35px;
+    // padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
     // font-size: 22px;
@@ -23,11 +27,13 @@
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     background-color: #eee;
+    background-color: #fff;
+    border: 1px solid black;
   }
   
   /* On mouse-over, add a grey background color */

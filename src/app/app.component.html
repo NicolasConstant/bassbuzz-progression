@@ -24,9 +24,9 @@
         </a>
     </div>
     <div *ngIf="scheduleType !== 0">
-        <h2 *ngIf="scheduleType !== 1" class="content__title">The HARDCORE Plan</h2>
-        <h2 *ngIf="scheduleType !== 2" class="content__title">The FAST TRACK Plan</h2>
-        <h2 *ngIf="scheduleType !== 3" class="content__title">The STEDY EDDIE Plan</h2>
+        <h2 *ngIf="scheduleType === 1" class="content__title">The HARDCORE Plan</h2>
+        <h2 *ngIf="scheduleType === 2" class="content__title">The FAST TRACK Plan</h2>
+        <h2 *ngIf="scheduleType === 3" class="content__title">The STEDY EDDIE Plan</h2>
 
         <p class="content__description">M = Module. L = Lesson. For example M3-L2 = Module 3, Lesson 2. Check-off the box when you've completed the lesson and corresponding workouts.</p>
 
