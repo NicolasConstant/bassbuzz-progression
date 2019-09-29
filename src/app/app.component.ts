@@ -7,8 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
     title = 'BassBuzz.com Progression';
+    scheduleType: BassBuzzScheduleEnum = BassBuzzScheduleEnum.Unknown;
 
     constructor() {
                 
     }
+}
+
+enum BassBuzzScheduleEnum {
+    Unknown = 0,
+    OneMonth = 1,
+    ThreeMonth = 2,
+    SixMonth = 3
 }

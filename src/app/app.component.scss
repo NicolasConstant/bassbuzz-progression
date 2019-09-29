@@ -1,3 +1,6 @@
+$light-gray: #f2f5f5;
+$orange: #ff6723;
+
 .header {
     min-height: 30px;
     padding: 60px 0 40px;
@@ -9,8 +12,41 @@
 }
 
 .content {
-    min-height: 50vh;
+    min-height: 50vh;    
     background-color: white;
+
+    padding: 0 30px;
+
+    &__title {
+        margin: 10px 0;
+        display: inline-block;
+        color: #ff6723;
+        font-size: 1.2em;
+    }
+}
+
+.schedule {
+    transition: all .2s;
+    display: block;
+    background-color: $light-gray;
+    margin: 10px auto;
+    max-width: 50vw;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        background-color: lighten($orange, 20);
+    }
+
+    &__title {
+        color: black;    
+        padding-bottom: 10px;   
+    }
+
+    &__subtitle {
+        color: gray;
+    }
 }
 
 .footer {
